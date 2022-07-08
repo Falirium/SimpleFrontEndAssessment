@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/js/script.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/basic.css" />
+    <title>Outil assessment</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" />
+
+      <label for="matricule">Matricule:</label><br />
+      <input type="text" id="matricule" name="matricule" />
+
+      <label for="role">Type d'acteur:</label><br />
+      <select name="role_type" id="role">
+        <option value="bcp">RH BCP</option>
+        <option value="bpr">RH BPR</option>
+        <option value="m1">Manager N+1</option>
+        <option value="m2">Manager N+2</option>
+      </select>
+
+      <label for="pass">Mot de passe :</label>
+      <input type="password" id="pass" name="password" minlength="8" required />
+      <label for="pass">Répéter le mot de passe :</label>
+      <input
+        type="password"
+        id="repass"
+        name="password"
+        minlength="8"
+        required
+      />
+
+      <input id="saveBtn" type="submit" value="Créer un compte" />
+
+      <div class="message"><p id="message"></p></div>
+    </form>
+  </body>
+  <script>
+    // Form validation
+    const fname = document.getElementById("fname");
+    const lname = document.getElementById("lname");
+    const mat = document.getElementById("matricule");
+    const pass1 = document.getElementById("pass");
+    const pass2 = document.getElementById("repass");
+    const btn = document.getElementById("saveBtn");
+    const mssgdiv = document.getElementById("message");
+    let password, re_password;
+
+    pass1.addEventListener("input", () => {
+      password = pass1.value;
+      //console.log(fname.value)
+      password === re_password
+        ? ((pass1.style.backgroundColor = "rgba(115,255,154,0.4)"),
+          (pass2.style.backgroundColor = "rgba(115,255,154,0.4)"))
+        : ((pass1.style.backgroundColor = "rgba(255,69,0,0.2)"),
+          (pass2.style.backgroundColor = "rgba(255,69,0,0.2)"));
+    });
+
+    pass2.addEventListener("input", () => {
+      re_password = pass2.value;
+      password === re_password
+        ? ((pass1.style.backgroundColor = "rgba(115,255,154,0.4)"),
+          (pass2.style.backgroundColor = "rgba(115,255,154,0.4)"))
+        : ((pass1.style.backgroundColor = "rgba(255,69,0,0.2)"),
+          (pass2.style.backgroundColor = "rgba(255,69,0,0.2)"));
+    });
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      let message;
+
+      if (password !== re_password) {
+        message = "Votre mot de passe n'a pas correspondu";
+        mssgdiv.textContent = message;
+      } else {
+        const message = sendRequest(
+          fname.value,
+          lname.value,
+          mat.value,
+          pass1.value
+        );
+
+        mssgdiv.textContent = message;
+      }
+    });
+
+    //Check the auth key
+  </script>
+</html>
