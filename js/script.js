@@ -152,3 +152,20 @@ function isEmail(email) {
     let emailRegex = "/^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/";
     return email.match(emailRegex);
 }
+
+type.addEventListener("change", (e) => {
+    if (type.value === "bcp") {
+        hideParent(bpr, true);
+    } else {
+        hideParent(bpr, false);
+    }
+});
+
+function hideParent(input, boolean) {
+    let parent = input.parentElement;
+    if (boolean) {
+        parent.className = "form-control hide";
+    } else {
+        parent.className = "form-control";
+    }
+}
