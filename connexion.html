@@ -1,96 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Outil assessment</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/css/basic.css" />
+        <script
+            src="https://kit.fontawesome.com/80db6bb671.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div id="main-frame" class="row">
+                <div class="col-md-4 p-0" id="sidebar">
+                    <img
+                        id="homepage-img"
+                        src="/images/CAPITAL-HUMAIN.png"
+                        alt="bcp"
+                    />
+                </div>
+                <div class="col-md-8 p-5">
+                    <div class="row px-4">
+                        <div class="col-md d-flex justify-content-end">
+                            <img
+                                class="float-right"
+                                id="logo-bcp"
+                                src="/images/logo-gbp.svg"
+                                alt="logo-bcp"
+                            />
+                        </div>
+                    </div>
+                    <div class="row h-100">
+                        <div
+                            class="col-md p-5 d-flex flex-column align-items-center justify-content-center"
+                        >
+                            <h3 class="form-header align-item-start mb-4">
+                                Bienvenue à l'assessment
+                            </h3>
+                            <div class="form-container">
+                                <form
+                                    class="form d-flex flex-column align-items-center"
+                                    action=""
+                                    id="form"
+                                >
+                                    <div class="d-flex w-100">
+                                        <div class="form-control">
+                                            <label for="nom">Nom</label>
+                                            <input
+                                                type="text"
+                                                placeholder="FARFAOUA"
+                                                id="nom"
+                                            />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i>
+                                            <small>Message d'erreur</small>
+                                        </div>
+
+                                        <div class="form-control">
+                                            <label for="prenom">Prénom</label>
+                                            <input
+                                                type="text"
+                                                placeholder="MOHAMED-AMINE"
+                                                id="prenom"
+                                            />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i>
+                                            <small>Message d'erreur</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex w-100">
+                                        <div class="form-control">
+                                            <label for="email">Email</label>
+                                            <input
+                                                type="email"
+                                                placeholder="mfarfaoua@cpm.ac.ma"
+                                                id="email"
+                                            />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i>
+                                            <small>Message d'erreur</small>
+                                        </div>
+                                        <div class="form-control">
+                                            <label for="matricule"
+                                                >Matricule</label
+                                            >
+                                            <input
+                                                type="text"
+                                                placeholder="M11223344"
+                                                id="matricule"
+                                            />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i>
+                                            <small>Message d'erreur</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex w-100">
+                                        <div class="form-control">
+                                            <label for="type"
+                                                >Type d'agent</label
+                                            >
+                                            <!-- <input type="text" id="type" />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i> -->
+                                            <select name="user-type" id="type">
+                                                <option value="bcp">
+                                                    RH BCP
+                                                </option>
+                                                <option value="bpr">
+                                                    RH BPR
+                                                </option>
+                                                <option value="n+1">
+                                                    Manager N+1
+                                                </option>
+                                                <option value="n+2">
+                                                    Manager N+2
+                                                </option>
+                                            </select>
+                                            <small>Message d'erreur</small>
+                                        </div>
+
+                                        <div class="form-control">
+                                            <label for="">Quelle BPR</label>
+                                            <input type="text" id="region" />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i>
+                                            <small>Message d'erreur</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex w-100">
+                                        <div class="form-control">
+                                            <label for="">Mot de passe</label>
+                                            <input
+                                                type="password"
+                                                id="password"
+                                            />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i>
+                                            <small>Message d'erreur</small>
+                                        </div>
+
+                                        <div class="form-control">
+                                            <label for=""
+                                                >Répéter le mot de passe</label
+                                            >
+                                            <input
+                                                type="password"
+                                                id="password2"
+                                            />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i>
+                                            <small>Message d'erreur</small>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="form-control submit-btn d-flex w-100 align-items-center"
+                                    >
+                                        <input
+                                            type="submit"
+                                            value="Créer un compte"
+                                        />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+    </body>
     <script src="/js/script.js"></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/basic.css" />
-    <title>Outil assessment</title>
-  </head>
-  <body>
-    <form action="">
-      <label for="fname">First name:</label><br />
-      <input type="text" id="fname" name="fname" /><br />
-      <label for="lname">Last name:</label><br />
-      <input type="text" id="lname" name="lname" />
+    <script>
+        // Form validation
+        const fname = document.getElementById("nom");
 
-      <label for="matricule">Matricule:</label><br />
-      <input type="text" id="matricule" name="matricule" />
+        //console.log("'kskskks'");
 
-      <label for="role">Type d'acteur:</label><br />
-      <select name="role_type" id="role">
-        <option value="bcp">RH BCP</option>
-        <option value="bpr">RH BPR</option>
-        <option value="m1">Manager N+1</option>
-        <option value="m2">Manager N+2</option>
-      </select>
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let message;
 
-      <label for="pass">Mot de passe :</label>
-      <input type="password" id="pass" name="password" minlength="8" required />
-      <label for="pass">Répéter le mot de passe :</label>
-      <input
-        type="password"
-        id="repass"
-        name="password"
-        minlength="8"
-        required
-      />
+            if (password !== re_password) {
+                message = "Votre mot de passe n'a pas correspondu";
+                mssgdiv.textContent = message;
+            } else {
+                const message = sendRequest(
+                    fname.value,
+                    lname.value,
+                    mat.value,
+                    pass1.value
+                );
 
-      <input id="saveBtn" type="submit" value="Créer un compte" />
+                mssgdiv.textContent = message;
+            }
+        });
 
-      <div class="message"><p id="message"></p></div>
-    </form>
-  </body>
-  <script>
-    // Form validation
-    const fname = document.getElementById("fname");
-    const lname = document.getElementById("lname");
-    const mat = document.getElementById("matricule");
-    const pass1 = document.getElementById("pass");
-    const pass2 = document.getElementById("repass");
-    const btn = document.getElementById("saveBtn");
-    const mssgdiv = document.getElementById("message");
-    let password, re_password;
-
-    pass1.addEventListener("input", () => {
-      password = pass1.value;
-      //console.log(fname.value)
-      password === re_password
-        ? ((pass1.style.backgroundColor = "rgba(115,255,154,0.4)"),
-          (pass2.style.backgroundColor = "rgba(115,255,154,0.4)"))
-        : ((pass1.style.backgroundColor = "rgba(255,69,0,0.2)"),
-          (pass2.style.backgroundColor = "rgba(255,69,0,0.2)"));
-    });
-
-    pass2.addEventListener("input", () => {
-      re_password = pass2.value;
-      password === re_password
-        ? ((pass1.style.backgroundColor = "rgba(115,255,154,0.4)"),
-          (pass2.style.backgroundColor = "rgba(115,255,154,0.4)"))
-        : ((pass1.style.backgroundColor = "rgba(255,69,0,0.2)"),
-          (pass2.style.backgroundColor = "rgba(255,69,0,0.2)"));
-    });
-
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      let message;
-
-      if (password !== re_password) {
-        message = "Votre mot de passe n'a pas correspondu";
-        mssgdiv.textContent = message;
-      } else {
-        const message = sendRequest(
-          fname.value,
-          lname.value,
-          mat.value,
-          pass1.value
-        );
-
-        mssgdiv.textContent = message;
-      }
-    });
-
-    //Check the auth key
-  </script>
+        //Check the auth key
+    </script>
 </html>
