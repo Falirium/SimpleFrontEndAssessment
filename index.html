@@ -1,34 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Outil assessment</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/css/basic.css" />
+        <script
+            src="https://kit.fontawesome.com/80db6bb671.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div id="main-frame" class="row">
+                <div class="col-md-4 p-0" id="sidebar">
+                    <img
+                        id="homepage-img"
+                        src="/images/CAPITAL-HUMAIN.png"
+                        alt="bcp"
+                    />
+                </div>
+                <div class="col-md-8 p-5">
+                    <div class="row px-4">
+                        <div class="col-md d-flex justify-content-end">
+                            <img
+                                class="float-right"
+                                id="logo-bcp"
+                                src="/images/logo-gbp.svg"
+                                alt="logo-bcp"
+                            />
+                        </div>
+                    </div>
+                    <div class="row h-100">
+                        <div
+                            class="col-md p-5 d-flex flex-column align-items-center justify-content-center"
+                        >
+                            <h3 class="form-header align-item-start mb-5">
+                                Bienvenue à l'assessment
+                            </h3>
+                            <div class="form-container mt-3">
+                                <form
+                                    class="form d-flex flex-column align-items-center"
+                                    action=""
+                                    id="form"
+                                >
+                                    <div class="d-flex w-100">
+                                        <div class="form-control">
+                                            <label for="nom">Matricule</label>
+                                            <input
+                                                type="text"
+                                                placeholder="M11223344"
+                                                id="matricule"
+                                            />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i>
+                                            <small>Message d'erreur</small>
+                                        </div>
+
+                                        <div class="form-control">
+                                            <label for="prenom"
+                                                >Mot de passe</label
+                                            >
+                                            <input type="password" />
+                                            <i class="fas fa-check-circle"></i>
+                                            <i
+                                                class="fas fa-exclamation-circle"
+                                            ></i>
+                                            <small>Message d'erreur</small>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="form-control submit-btn d-flex w-100 align-items-center"
+                                    >
+                                        <input
+                                            type="submit"
+                                            value="Connexion"
+                                        />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+    </body>
     <script src="/js/script.js"></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        // Form validation
+        const fname = document.getElementById("nom");
 
-    <title>Outil assessment</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/basic.css" />
-  </head>
-  <body>
-    <form action="">
-      <label for="fname">Matricule :</label><br />
-      <input type="text" id="fname" name="fname" /><br />
-      <label for="lname">Mot de passe :</label><br />
-      <input type="text" id="lname" name="lname" />
+        //console.log("'kskskks'");
 
-      <input type="submit" value="Connexion" />
-    </form>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-  <script></script>
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            let message;
+
+            if (password !== re_password) {
+                message = "Votre mot de passe n'a pas correspondu";
+                mssgdiv.textContent = message;
+            } else {
+                const message = sendRequest(
+                    fname.value,
+                    lname.value,
+                    mat.value,
+                    pass1.value
+                );
+
+                mssgdiv.textContent = message;
+            }
+        });
+
+        //Check the auth key
+    </script>
 </html>
