@@ -1,0 +1,7 @@
+.btn.btn-primary.show {
+    visibility: visible;
+}
+
+.btn.btn-primary.hide {
+    visibility: hidden;
+}

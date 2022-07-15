@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Outil assessment</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/css/basic.css" />
+        <link rel="stylesheet" href="/css/preassessment.css" />
+        <script
+            src="https://kit.fontawesome.com/80db6bb671.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <form action="">
+                        <div class="mb-2">
+                            <label for="formFile" class="form-label">Sélectionner le fichier Excel de la population cible</label>
+                            <input class="form-control" type="file" id="formFile">
+                        </div>
+
+                        <button type="button" id="btn-show" class="btn btn-info show" onclick="postExcelFile()">Télécharger</button>
+
+                    </form>
+
+                    <p id="textField">ID du fichier : </p>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead id="thead">
+    
+                            </thead>
+                            <tbody id="tbody">
+    
+                            </tbody>
+                        </table>
+    
+                        <input class="form-control w-75" id="input-id" type="text" placeholder="Id du fichier" aria-label="default input example">
+                        <button type="button" id="btn-show" class="btn btn-primary show" onclick="fetchEmployeesData()">Télécharger les données et les représenter</button>
+                        <button type="button" id="btn-classify" class="btn btn-primary hide" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Classifier les collaborateurs</button>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Définition des groupes de classification</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <form action="">
+                                <div class="my-4 model-form-container">
+                                    <h2 class="text-center" id="header-category">Catégorie numéro 1</h2>
+                                    <label for="catgory-name" class="col-form-label">Nom de la catégorie</label>
+                                    <input type="text" class="form-control" id="catgory-name">
+
+                                    <div class="criteria-container mb-3">
+                                        <label for="select-classification" class="col-form-label">Choisissez votre critière de classification</label>
+                                        <select class="form-select" aria-label="Default select example" id="select-classification">
+                                        
+                                        </select>
+
+                                        <div class="d-flex w-100 justify-content-around">
+                                            <div >
+                                                <label for="min-input">Valeur Min :</label>
+                                                <input id="min-input" type="text" class="form-control mt-2">
+                                            </div>
+                                            <div>
+                                                <label for="max-input">Valeur Max :</label>
+                                                <input id="max-input" type="text" class="form-control mt-2">
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                </div> <hr>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="addNewCriteria()">Ajouter un autre critière</button>
+                        <button type="button" class="btn btn-primary" onclick="addNewCategory()" id="btn-add-category">Ajouter une autre catégorie</button>
+                        <button type="button" class="btn btn-success" onclick="">Valider</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+    <script src="/js/preassessment.js"></script>
+    
+</html>
