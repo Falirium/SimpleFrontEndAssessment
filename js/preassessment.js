@@ -95,29 +95,31 @@ async function fetchEmployeesData() {
 }
 
 
-async function postExcelFile(file) {
+async function postExcelFile() {
+
+    let input = document.getElementById('formFile');
+    let file = input.files[0];
 
     let url = "http://localhost:8080/preassessment/api/v1/upload"
 
-    console.log(file);
+    let bodyFile = new FormData();
+
+    bodyFile.append("file", file);
+    console.log(bodyFile);
     fetch(url, { // Your POST endpoint
         method: 'POST',
         headers: {
             // Content-Type may need to be completely **omitted**
             // or you may need something
-            "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=UTF-8"
         },
-        body: file // This is your file object
+        body: bodyFile // This is your file object
     }).then(
-        response => {
-            let json = response.json();
-
-
-            textField.innerHTML = json.message;
-
-        } // if the response is a JSON object
+        response => response.json() // if the response is a JSON object
     ).then(
-        success => console.log(success) // Handle the success response object
+        success => {
+            textField.textContent = "ID du fichier : " + success["message"];
+            console.log(success)
+        } // Handle the success response object
     ).catch(
         error => console.log(error) // Handle the error response object
     );
@@ -148,7 +150,7 @@ const input = document.getElementById('formFile');
 // };
 
 // Event handler executed when a file is selected
-const onSelectFile = () => postExcelFile(input.files[0]);
+const onSelectFile = () => postExcelFile();
 
 // Add a listener on your input
 // It will be triggered when a file will be selected
