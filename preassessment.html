@@ -50,8 +50,9 @@
                         </table>
     
                         <input class="form-control w-75" id="input-id" type="text" placeholder="Id du fichier" aria-label="default input example">
-                        <button type="button" id="btn-show" class="btn btn-primary show" onclick="fetchEmployeesData()">Télécharger les données et les représenter</button>
-                        <button type="button" id="btn-classify" class="btn btn-primary hide" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Classifier les collaborateurs</button>
+                        <button type="button" id="btn-download" class="btn btn-primary show" onclick="">Télécharger les données et les représenter</button>
+                        <button type="button" id="btn-category" class="btn btn-primary hide" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Ajouter des catégories</button>
+                        <button type="button" id="btn-classify" class="btn btn-warning hide" >Classifier les collaborateurs</button>
                         
                     </div>
                     
@@ -68,36 +69,13 @@
                         </div>
                         <div class="modal-body p-4">
                             <form id="form-modal" action="">
-                                <div class="my-4 category-container">
-                                    <h2 class="text-center" id="header-category">Catégorie numéro 1</h2>
-                                    <label for="catgory-name" class="col-form-label">Nom de la catégorie</label>
-                                    <input type="text" class="form-control" id="catgory-name">
-
-                                    <div class="criteria-container mb-3">
-                                        <label for="select-classification" class="col-form-label">Choisissez votre critière de classification</label>
-                                        <select class="form-select" aria-label="Default select example" id="select-classification">
-                                        
-                                        </select>
-
-                                        <div class="d-flex w-100 justify-content-around">
-                                            <div >
-                                                <label for="min-input">Valeur Min :</label>
-                                                <input id="min-input" type="text" class="form-control mt-2">
-                                            </div>
-                                            <div>
-                                                <label for="max-input">Valeur Max :</label>
-                                                <input id="max-input" type="text" class="form-control mt-2">
-                                            </div>
-                                        </div>
-                                    </div> 
-
-                                </div> <hr>
+                                
                             </form>
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" onclick="addNewCriteria()">Ajouter un autre critière</button>
-                        <button type="button" class="btn btn-primary" onclick="addNewCategory()" id="btn-add-category">Ajouter une autre catégorie</button>
-                        <button type="button" class="btn btn-success" onclick="">Valider</button>
+                        <button type="button" class="btn btn-secondary" id="btn-add-criteria">Ajouter un autre critière</button>
+                        <button type="button" class="btn btn-primary" id="btn-add-category">Ajouter une autre catégorie</button>
+                        <button type="button" class="btn btn-success" id="btn-submit" onclick="" data-bs-dismiss="modal">Valider</button>
                         </div>
                     </div>
                     </div>

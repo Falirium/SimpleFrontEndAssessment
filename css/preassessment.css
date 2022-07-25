@@ -1,7 +1,30 @@
-.btn.btn-primary.show {
+.show {
     visibility: visible;
 }
 
-.btn.btn-primary.hide {
+.hide {
     visibility: hidden;
+}
+.criteria-form-container, .category-container{
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+    position: relative;
+}
+
+.criteria-form-container small, .category-container small {
+    bottom: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.category-container.error input {
+    border: 2px solid #e74c3c;
+}
+
+.criteria-form-container.error input {
+    border: 2px solid #e74c3c;
+}
+.criteria-form-container.error small {
+    visibility: visible;
+    color: #e74c3c;
 }
